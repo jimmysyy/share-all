@@ -4,29 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的资源分享</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>我的资源分享列表</h1>
 
-        <div class="table-responsive"> <table>
-                <thead>
-                    <tr>
-                        <th>名称</th>
-                        <th>描述</th>
-                        <th>链接</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>资源A</td>
-                        <td>这是一个关于编程的教程。</td>
-                        <td><a href="https://example.com/resourceA" target="_blank">点击访问</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> </div>
+        <div class="announcement">
+            <p><strong>📢 最新通知：</strong> 本站资源持续更新中，欢迎收藏和分享！如果您有好的资源推荐，请联系我。</p>
+        </div>
+
+        <div class="resource-category">
+            <h2 class="category-title">编程工具</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>描述</th>
+                            <th>分享链接 1</th>
+                            <th>分享链接 2</th>
+                            <th>分享链接 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VS Code</td>
+                            <td>微软出品的强大代码编辑器，支持多种语言和插件。</td>
+                            <td><a href="https://code.visualstudio.com/" target="_blank">官网</a></td>
+                            <td><a href="https://baike.baidu.com/item/VSCode" target="_blank">百度百科</a></td>
+                            <td><a href="https://github.com/microsoft/vscode" target="_blank">GitHub</a></td>
+                        </tr>
+                        <tr>
+                            <td>Git</td>
+                            <td>分布式版本控制系统，用于代码管理。</td>
+                            <td><a href="https://git-scm.com/" target="_blank">官网</a></td>
+                            <td><a href="https://www.runoob.com/git/git-tutorial.html" target="_blank">菜鸟教程</a></td>
+                            <td><a href="https://learngitbranching.js.org/" target="_blank">Git 分支教程</a></td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="resource-category">
+            <h2 class="category-title">学习资料</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>描述</th>
+                            <th>分享链接 1</th>
+                            <th>分享链接 2</th>
+                            <th>分享链接 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>W3School</td>
+                            <td>全面的网页开发教程，包括 HTML, CSS, JavaScript 等。</td>
+                            <td><a href="https://www.w3school.com.cn/" target="_blank">中文站</a></td>
+                            <td><a href="https://www.w3schools.com/" target="_blank">英文站</a></td>
+                            <td><a href="#" target="_blank">备用链接</a></td>
+                        </tr>
+                        <tr>
+                            <td>MDN Web Docs</td>
+                            <td>Mozilla 维护的 Web 技术文档，权威且详细。</td>
+                            <td><a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank">中文站</a></td>
+                            <td><a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">英文站</a></td>
+                            <td><a href="#" target="_blank">备用链接</a></td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>关于我</h3>
+                <p>一个热爱分享的开发者，致力于收集和整理各种有用的在线资源，希望能帮助到更多人。欢迎交流学习！</p>
+            </div>
+            <div class="footer-section links">
+                <h3>常用链接</h3>
+                <ul>
+                    <li><a href="https://github.com/yourusername" target="_blank">我的 GitHub</a></li>
+                    <li><a href="https://blog.csdn.net/yourcsdn" target="_blank">我的 CSDN 博客</a></li>
+                    <li><a href="mailto:your_email@example.com">联系我</a></li>
+                    <li><a href="https://your-other-website.com" target="_blank">我的其他网站</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 我的资源分享 | All Rights Reserved
+        </div>
+    </footer>
 </body>
 </html>

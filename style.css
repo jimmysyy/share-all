@@ -2,61 +2,112 @@
 
 /* --- 全局样式 --- */
 body {
-    font-family: 'Roboto', sans-serif; /* 假设你从 Google Fonts 引入了 Roboto */
-    line-height: 1.6;
+    font-family: 'Roboto', 'Noto Sans SC', sans-serif; /* 优先英文字体，中文用 Noto Sans SC */
+    line-height: 1.7; /* 稍微增加行高，提升阅读舒适度 */
     margin: 0;
-    padding: 20px;
-    background-color: #eef2f7; /* 更柔和的背景色 */
+    padding: 0; /* 移除 body 默认 padding，由 container 负责 */
+    background-color: #f0f2f5; /* 更现代的浅灰色背景 */
     color: #333;
+    display: flex; /* 使用 Flexbox 布局，让 footer 固定在底部 */
+    flex-direction: column;
+    min-height: 100vh; /* 确保 body 至少占据视口高度 */
 }
 
 .container {
-    max-width: 960px;
-    margin: 20px auto;
-    padding: 30px; /* 增加内边距 */
+    max-width: 1000px; /* 稍微增加最大宽度 */
+    width: 95%; /* 确保在小屏幕上有适当的边距 */
+    margin: 30px auto; /* 增加上下外边距 */
+    padding: 40px; /* 增加内边距 */
     background: #ffffff;
-    border-radius: 12px; /* 更圆润的边角 */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 更明显的阴影效果 */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* 更明显的阴影效果 */
+    flex-grow: 1; /* 让容器在 Flexbox 中占据剩余空间 */
 }
 
 h1 {
     text-align: center;
-    color: #2c3e50; /* 深蓝色标题 */
-    margin-bottom: 35px; /* 增加标题和表格的间距 */
-    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 38px; /* 稍微增大标题字体 */
+    letter-spacing: 1px; /* 增加字母间距 */
+    border-bottom: 2px solid #eee; /* 标题下划线 */
+    padding-bottom: 15px;
 }
+
+/* --- 通知公告框样式 --- */
+.announcement {
+    background-color: #e6f7ff; /* 浅蓝色背景 */
+    border: 1px solid #91d5ff; /* 蓝色边框 */
+    border-left: 5px solid #1890ff; /* 左侧粗边框 */
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.announcement strong {
+    color: #1890ff;
+}
+
+
+/* --- 资源分类样式 --- */
+.resource-category {
+    margin-bottom: 50px; /* 每个分类块之间的间距 */
+    padding: 25px; /* 增加分类块内边距 */
+    background-color: #fdfdfd; /* 分类块的背景色 */
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05); /* 分类块的轻微阴影 */
+    position: relative; /* 用于 category-title 定位 */
+}
+
+.category-title {
+    position: absolute; /* 绝对定位到左上角 */
+    top: -15px; /* 突出显示 */
+    left: 20px;
+    background-color: #5cb85c; /* 绿色背景 */
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* 确保标题在表格上方 */
+}
+
 
 /* --- 表格样式 --- */
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border-radius: 8px; /* 表格容器圆角 */
-    border: 1px solid #e0e0e0; /* 轻微边框 */
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-top: 15px; /* 调整表格与分类标题的距离 */
 }
 
 table {
     width: 100%;
-    border-collapse: separate; /* 使用 separate 可以为单元格设置圆角 */
-    border-spacing: 0; /* 移除单元格间距 */
-    margin-top: 0; /* 移除表格默认上边距 */
-    min-width: 650px; /* 调整最小宽度 */
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 800px; /* 调整最小宽度，以适应更多链接 */
 }
 
 table th, table td {
-    padding: 15px 18px; /* 增加单元格内边距 */
+    padding: 15px 18px;
     text-align: left;
     white-space: nowrap;
-    border-bottom: 1px solid #e0e0e0; /* 单元格底部边框 */
-    border-right: 1px solid #e0e0e0; /* 单元格右侧边框 */
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
 }
 
 table th {
-    background-color: #f8f9fa; /* 浅灰色表头背景 */
+    background-color: #e9ecef; /* 浅灰色表头背景 */
     color: #555;
-    font-weight: 600; /* 更粗的字体 */
-    position: sticky; /* 使表头在滚动时固定 */
+    font-weight: 600;
+    position: sticky;
     top: 0;
-    z-index: 1; /* 确保表头在内容上方 */
+    z-index: 1;
 }
 
 /* 表格的第一个和最后一个单元格的圆角 */
@@ -65,72 +116,212 @@ table thead th:first-child {
 }
 table thead th:last-child {
     border-top-right-radius: 8px;
-    border-right: none; /* 移除最右侧的边框 */
+    border-right: none;
 }
 table tbody tr:last-child td:first-child {
     border-bottom-left-radius: 8px;
 }
 table tbody tr:last-child td:last-child {
     border-bottom-right-radius: 8px;
-    border-right: none; /* 移除最右侧的边框 */
+    border-right: none;
 }
 
-
 table tbody tr:nth-child(even) {
-    background-color: #fefefe; /* 更浅的交替行背景 */
+    background-color: #fefefe;
 }
 
 table tbody tr:hover {
-    background-color: #f0f8ff; /* 鼠标悬停效果，更柔和的蓝色 */
-    cursor: pointer; /* 提示可点击 */
+    background-color: #eaf6ff; /* 鼠标悬停效果，更柔和的蓝色 */
+    cursor: pointer;
 }
 
 table td:last-child {
-    border-right: none; /* 移除表格内容最右侧的边框 */
+    border-right: none;
 }
 
 table tbody tr:last-child td {
-    border-bottom: none; /* 移除最后一行单元格的底部边框 */
+    border-bottom: none;
 }
-
 
 /* --- 链接样式 --- */
 a {
-    color: #007bff; /* 保持链接蓝色 */
+    color: #007bff;
     text-decoration: none;
-    transition: color 0.2s ease-in-out; /* 平滑过渡效果 */
+    transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    color: #0056b3; /* 鼠标悬停时颜色变深 */
+    color: #0056b3;
     text-decoration: underline;
 }
 
-/* --- 媒体查询 (保持或微调) --- */
+/* --- 页脚样式 --- */
+.footer {
+    background-color: #2c3e50; /* 深色背景 */
+    color: #ecf0f1; /* 浅色文字 */
+    padding: 40px 20px;
+    margin-top: 50px; /* 与容器的间距 */
+    font-size: 15px;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex; /* Flexbox 布局 */
+    flex-wrap: wrap; /* 允许换行 */
+    justify-content: space-between; /* 左右两边对齐 */
+    gap: 30px; /* 列之间的间距 */
+}
+
+.footer-section {
+    flex: 1; /* 平均分配空间 */
+    min-width: 250px; /* 最小宽度，防止在小屏幕上过于拥挤 */
+}
+
+.footer-section h3 {
+    color: #1abc9c; /* 强调色 */
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer-section h3::after { /* 小下划线 */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #1abc9c;
+}
+
+.footer-section p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-section ul li a:hover {
+    color: #1abc9c; /* 鼠标悬停时变成强调色 */
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* --- 媒体查询 (响应式调整) --- */
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
-        margin: 10px auto;
-        border-radius: 8px;
+        padding: 25px;
+        margin: 20px auto;
     }
 
     h1 {
-        font-size: 28px;
+        font-size: 32px;
         margin-bottom: 25px;
+    }
+
+    .announcement {
+        padding: 12px 15px;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .resource-category {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .category-title {
+        font-size: 18px;
+        padding: 7px 15px;
+        top: -12px;
+        left: 15px;
     }
 
     table th, table td {
         padding: 12px 15px;
         font-size: 13px;
     }
+
+    .table-responsive {
+        /* 在小屏幕上让表格宽度更自由，只靠 overflow-x 滚动 */
+        min-width: unset; /* 移除 min-width */
+    }
+    table {
+        min-width: 700px; /* 适当调小最小宽度 */
+    }
+
+    .footer-content {
+        flex-direction: column; /* 小屏幕上列堆叠显示 */
+        gap: 20px;
+    }
+    .footer-section {
+        min-width: unset; /* 移除最小宽度限制 */
+    }
 }
 
 @media (max-width: 480px) {
     body {
-        padding: 10px;
+        padding: 0;
+    }
+    .container {
+        padding: 15px;
+        margin: 15px auto;
+        border-radius: 8px;
     }
     h1 {
-        font-size: 24px;
+        font-size: 28px;
         margin-bottom: 20px;
+    }
+    .announcement {
+        font-size: 13px;
+    }
+    .resource-category {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    .category-title {
+        font-size: 16px;
+        padding: 6px 12px;
+        top: -10px;
+        left: 10px;
+    }
+    table {
+        min-width: 600px; /* 进一步调小最小宽度 */
+    }
+    .footer {
+        padding: 30px 15px;
+    }
+    .footer-section h3 {
+        font-size: 16px;
+    }
+    .footer-section p, .footer-section ul li {
+        font-size: 14px;
+    }
+    .footer-bottom {
+        margin-top: 30px;
     }
 }
