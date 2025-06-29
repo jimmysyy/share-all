@@ -1,0 +1,136 @@
+/* style.css */
+
+/* --- 全局样式 --- */
+body {
+    font-family: 'Roboto', sans-serif; /* 假设你从 Google Fonts 引入了 Roboto */
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #eef2f7; /* 更柔和的背景色 */
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 30px; /* 增加内边距 */
+    background: #ffffff;
+    border-radius: 12px; /* 更圆润的边角 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 更明显的阴影效果 */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50; /* 深蓝色标题 */
+    margin-bottom: 35px; /* 增加标题和表格的间距 */
+    font-size: 32px;
+}
+
+/* --- 表格样式 --- */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px; /* 表格容器圆角 */
+    border: 1px solid #e0e0e0; /* 轻微边框 */
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; /* 使用 separate 可以为单元格设置圆角 */
+    border-spacing: 0; /* 移除单元格间距 */
+    margin-top: 0; /* 移除表格默认上边距 */
+    min-width: 650px; /* 调整最小宽度 */
+}
+
+table th, table td {
+    padding: 15px 18px; /* 增加单元格内边距 */
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid #e0e0e0; /* 单元格底部边框 */
+    border-right: 1px solid #e0e0e0; /* 单元格右侧边框 */
+}
+
+table th {
+    background-color: #f8f9fa; /* 浅灰色表头背景 */
+    color: #555;
+    font-weight: 600; /* 更粗的字体 */
+    position: sticky; /* 使表头在滚动时固定 */
+    top: 0;
+    z-index: 1; /* 确保表头在内容上方 */
+}
+
+/* 表格的第一个和最后一个单元格的圆角 */
+table thead th:first-child {
+    border-top-left-radius: 8px;
+}
+table thead th:last-child {
+    border-top-right-radius: 8px;
+    border-right: none; /* 移除最右侧的边框 */
+}
+table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+    border-right: none; /* 移除最右侧的边框 */
+}
+
+
+table tbody tr:nth-child(even) {
+    background-color: #fefefe; /* 更浅的交替行背景 */
+}
+
+table tbody tr:hover {
+    background-color: #f0f8ff; /* 鼠标悬停效果，更柔和的蓝色 */
+    cursor: pointer; /* 提示可点击 */
+}
+
+table td:last-child {
+    border-right: none; /* 移除表格内容最右侧的边框 */
+}
+
+table tbody tr:last-child td {
+    border-bottom: none; /* 移除最后一行单元格的底部边框 */
+}
+
+
+/* --- 链接样式 --- */
+a {
+    color: #007bff; /* 保持链接蓝色 */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* 平滑过渡效果 */
+}
+
+a:hover {
+    color: #0056b3; /* 鼠标悬停时颜色变深 */
+    text-decoration: underline;
+}
+
+/* --- 媒体查询 (保持或微调) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px auto;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    table th, table td {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}
